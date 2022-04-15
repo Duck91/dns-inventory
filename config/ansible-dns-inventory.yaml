@@ -3,12 +3,12 @@ datasource: "dns"
 # DNS datasource configuration.
 dns:
   # DNS server address. Environment variable: ADI_DNS_SERVER
-  server: "127.0.0.1:53"
+  server: "127.0.0.53:53"
   # Network timeout for DNS requests. Environment variable: ADI_DNS_TIMEOUT
   timeout: "30s"
   # DNS zone list. Environment variable: ADI_DNS_ZONES (space-separated list)
   zones:
-    - server.local.
+    - medsi.pro.
   # No-transfer mode configuration.
   notransfer:
     # Enable no-transfer data retrieval mode. Environment variable: ADI_DNS_NOTRANSFER_ENABLED
