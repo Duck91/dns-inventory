@@ -1,4 +1,4 @@
-module github.com/Duck91/dns-inventory/
+module github.com/Duck91/dns-inventory
 
 go 1.15
 
