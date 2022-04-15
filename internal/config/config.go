@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 
-	"github.com/NeonSludge/ansible-dns-inventory/pkg/inventory"
+	"github.com/Duck91/dns-inventory/pkg/inventory"
 )
 
 const (
