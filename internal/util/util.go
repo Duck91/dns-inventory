@@ -10,7 +10,7 @@ import (
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 
-	"github.com/NeonSludge/ansible-dns-inventory/pkg/inventory"
+	"github.com/Duck91/dns-inventory/pkg/inventory"
 )
 
 // Marshal returns the JSON or YAML encoding of v.
