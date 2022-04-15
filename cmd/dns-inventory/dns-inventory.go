@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/NeonSludge/ansible-dns-inventory/internal/build"
-	"github.com/NeonSludge/ansible-dns-inventory/internal/config"
-	"github.com/NeonSludge/ansible-dns-inventory/internal/logger"
-	"github.com/NeonSludge/ansible-dns-inventory/internal/util"
-	"github.com/NeonSludge/ansible-dns-inventory/pkg/inventory"
+	"github.com/Duck91/dns-inventory/internal/build"
+	"github.com/Duck91/dns-inventory/internal/config"
+	"github.com/Duck91/dns-inventory/internal/logger"
+	"github.com/Duck91/dns-inventory/internal/util"
+	"github.com/Duck91/dns-inventory/pkg/inventory"
 )
 
 func main() {
