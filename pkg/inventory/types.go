@@ -32,7 +32,7 @@ type (
 		// DNS datasource configuration.
 		DNS struct {
 			// DNS server address.
-			Server string `mapstructure:"server" default:"127.0.0.53:53"`
+			Server string `mapstructure:"server" default:"127.0.0.53"`
 			// Network timeout for DNS requests.
 			Timeout time.Duration `mapstructure:"timeout" default:"30s"`
 			// DNS zone list.
