@@ -10,7 +10,7 @@ import (
 	"github.com/go-playground/validator/v10/non-standard/validators"
 	"github.com/pkg/errors"
 
-	"github.com/NeonSludge/ansible-dns-inventory/internal/logger"
+	"github.com/Duck91/dns-inventory/internal/logger"
 )
 
 const (
