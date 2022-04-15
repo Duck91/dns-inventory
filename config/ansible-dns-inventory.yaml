@@ -1,0 +1,101 @@
+# Datasource type. Environment variable: ADI_DATASOURCE
+datasource: "dns"
+# DNS datasource configuration.
+dns:
+  # DNS server address. Environment variable: ADI_DNS_SERVER
+  server: "127.0.0.1:53"
+  # Network timeout for DNS requests. Environment variable: ADI_DNS_TIMEOUT
+  timeout: "30s"
+  # DNS zone list. Environment variable: ADI_DNS_ZONES (space-separated list)
+  zones:
+    - server.local.
+  # No-transfer mode configuration.
+  notransfer:
+    # Enable no-transfer data retrieval mode. Environment variable: ADI_DNS_NOTRANSFER_ENABLED
+    enabled: false
+    # A host whose TXT records contain inventory data. Environment variable: ADI_DNS_NOTRANSFER_HOST
+    host: "ansible-dns-inventory"
+    # Separator between a hostname and an attribute string in a TXT record. Environment variable: ADI_DNS_NOTRANSFER_SEPARATOR
+    separator: ":"
+  # TSIG parameters (used only with zone transfer requests).
+  tsig:
+    # Enable TSIG. Environment variable: ADI_DNS_TSIG_ENABLED
+    enabled: false
+    # TSIG key name. Environment variable: ADI_DNS_TSIG_KEY
+    key: "axfr."
+    # TSIG secret (base64-encoded). Environment variable: ADI_DNS_TSIG_SECRET
+    secret: "c2VjcmV0Cg=="
+    # TSIG algorithm. Allowed values: 'hmac-sha1', hmac-sha224, 'hmac-sha256', 'hmac-sha384', 'hmac-sha512'. 'hmac-sha256' is used if an invalid value is specified. Environment variable: ADI_DNS_TSIG_ALGO
+    algo: "hmac-sha256"
+# Etcd datasource configuration.
+etcd:
+  # Etcd cluster endpoints. Environment variable: ADI_ETCD_ENDPOINTS (space-separated list)
+  endpoints:
+    - "127.0.0.1:2379"
+  # Network timeout for etcd requests. Environment variable: ADI_ETCD_TIMEOUT
+  timeout: "30s"
+  # Etcd k/v path prefix. Environment variable: ADI_ETCD_PREFIX
+  prefix: "ANSIBLE_INVENTORY"
+  # Etcd host zone list. Environment variable: ADI_DNS_ZONES (space-separated list)
+  zones:
+    - server.local.
+  # Etcd authentication configuration.
+  auth:
+    # Username. Environment variable: ADI_ETCD_AUTH_USERNAME
+    username: ""
+    # Password. Environment variable: ADI_ETCD_AUTH_PASSWORD
+    password: ""
+  # Etcd TLS configuration.
+  tls:
+    # Enable TLS. Environment variable: ADI_ETCD_TLS_ENABLED
+    enabled: true
+    # Skip verification of the etcd server's certificate chain and host name. Environment variable: ADI_ETCD_TLS_INSECURE
+    insecure: false
+    # Trusted CA bundle. If both 'pem' and 'path' are set, 'pem' takes priority.
+    ca:
+      # Path to a file containing a PEM-formatted trusted CA bundle. Environment variable: ADI_ETCD_TLS_CA_PATH
+      path: ""
+      # PEM-formatted trusted CA bundle (YAML multiline). Environment variable: ADI_ETCD_TLS_CA_PEM
+      pem: ""
+    # User certificate.
+    certificate:
+      # Path to a file containing a PEM-formatted user certificate. Environment variable: ADI_ETCD_TLS_CERTIFICATE_PATH
+      path: ""
+      # PEM-formatted user certificate (YAML multiline). Environment variable: ADI_ETCD_TLS_CERTIFICATE_PEM
+      pem: ""
+    # User private key. If both 'pem' and 'path' are set, 'pem' takes priority.
+    key:
+      # Path to a file containing a PEM-formatted private key. Environment variable: ADI_ETCD_TLS_KEY_PATH
+      path: ""
+      # PEM-formatted private key (YAML multiline). Environment variable: ADI_ETCD_TLS_KEY_PEM
+      pem: ""
+# Host record parsing configuration.
+txt:
+  # Key/value pair parsing configuration.
+  kv:
+    # Separator between k/v pairs found in TXT records. Environment variable: ADI_TXT_KV_SEPARATOR
+    separator: ";"
+    # Separator between a key and a value. Environment variable: ADI_TXT_KV_EQUALSIGN
+    equalsign: "="
+  # Host variables parsing configuration.
+  vars:
+    # Enable host variables support. Environment variable: ADI_TXT_VARS_ENABLED
+    enabled: false
+    # Separator between k/v pairs found in the host variables attribute. Environment variable: ADI_TXT_VARS_SEPARATOR
+    separator: ","
+    # Separator between a key and a value. Environment variable: ADI_TXT_VARS_EQUALSIGN
+    equalsign: "="
+  # Host attributes parsing configuration.
+  keys:
+    # Separator between elements of an Ansible group name. Environment variable: ADI_TXT_KEYS_SEPARATOR
+    separator: "_"
+    # Key name of the attribute containing the host operating system identifier. Environment variable: ADI_TXT_KEYS_OS
+    os: "OS"
+    # Key name of the attribute containing the host environment identifier. Environment variable: ADI_TXT_KEYS_ENV
+    env: "ENV"
+    # Key name of the attribute containing the host role identifier. Environment variable: ADI_TXT_KEYS_ROLE
+    role: "ROLE"
+    # Key name of the attribute containing the host service identifier. Environment variable: ADI_TXT_KEYS_SRV
+    srv: "SRV"
+    # Key name of the attribute containing the host variables. Environment variable: ADI_TXT_KEYS_VARS
+    vars: "VARS"
