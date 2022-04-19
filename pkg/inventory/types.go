@@ -36,7 +36,7 @@ type (
 			// Network timeout for DNS requests.
 			Timeout time.Duration `mapstructure:"timeout" default:"30s"`
 			// DNS zone list.
-			Zones []string `mapstructure:"zones" default:"[\"INFRA-MONITORING.medsi.pro.\"]"`
+			Zones []string `mapstructure:"zones" default:"[\"medsi.pro.\"]"`
 			// No-transfer mode configuration.
 			Notransfer struct {
 				// Enable no-transfer data retrieval mode.
